@@ -1,11 +1,11 @@
-const { Activity } = require('../../db');
+const { Activity, Country } = require('../../db');
 
 const postActivity = async (req, res) => {
 
-    const { name, difficulty, duration, season } = req.body; 
+    const { name, difficulty, duration, season, countriesID } = req.body; 
 
     try {
-        if(!name || !name.trim() || !difficulty || !season){
+        if(!name || !name.trim() || !difficulty || !season ){
             throw new Error('Data missing');
         };
 
@@ -15,6 +15,11 @@ const postActivity = async (req, res) => {
                 defaults: { difficulty, duration, season }
             }
         );
+
+        if(countriesID && countriesID.length > 0) {
+            const countriesFound = await Country.findAll({ where: { id: countriesID }});
+            await activity.setCountries(countriesFound);
+        }
         
         return res.status(200).json({ activity, created });
 
