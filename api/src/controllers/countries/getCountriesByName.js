@@ -1,25 +1,23 @@
-const { Country } = require('../../db');
+const { Country, Activity } = require('../../db');
 const { Op } = require('sequelize');
 
 const getCountriesByName = async (req, res) => {
 
     const { name } = req.query;
 
-    if (!name) {
-        return res.redirect('/countries'); // Redirige a la ruta que devuelve todos los países
-    }
-
     try {
         const countries = await Country.findAll({
-
+            
             where: {
-                name: {
-                    [Op.iLike]: `%${name}%`
-                }
-            }
+                name: {[Op.iLike]: `%${name}%`}
+            },
+            
+            include: [
+                {model: Activity, through: {attributes: [] }}
+            ]
         });
 
-        if(!countries.length) throw new Error('No countries found with that name');
+        if(!countries.length) throw new Error(`No countries found with NAME: ${name}`);
 
         return res.status(200).json(countries);
 

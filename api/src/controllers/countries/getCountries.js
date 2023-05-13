@@ -1,11 +1,15 @@
-const { Country } = require('../../db');
+const { Country, Activity } = require('../../db');
 
 const getCountries = async (req, res) => {
 
     try {
-        const allCountries = await Country.findAll();
+        const allCountries = await Country.findAll({
+            include: [{
+                model: Activity, through: {attributes: [] }
+            }]
+        });
 
-        if(!allCountries.length) throw new Error('No hay países en la base de datos');
+        if(!allCountries.length) throw new Error('No countries found in DataBase');
 
         return res.status(200).json(allCountries);
     

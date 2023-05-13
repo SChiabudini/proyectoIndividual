@@ -5,7 +5,7 @@ const getActivities = async (req, res) => {
     try {
         const allActivities = await Activity.findAll();
 
-        if(!allActivities.length) throw new Error('No hay actividades en la base de datos');
+        if(!allActivities.length) throw new Error('No activities found in DataBase');
 
         return res.status(200).json(allActivities);
     

@@ -1,15 +1,22 @@
 const countriesRoutes = require('express').Router();
 const getCountries = require('../controllers/countries/getCountries');
 const getCountriesByName = require('../controllers/countries/getCountriesByName');
+const getCountryById = require('../controllers/countries/getCountryById');
 
 
-countriesRoutes.get('/', (req, res) => {
-    getCountriesByName(req, res);
-});
+countriesRoutes.get('/', async (req, res) => {
+    const { name } = req.query;
 
-countriesRoutes.get('/', (req, res) => {
+    if (name) {
+        return getCountriesByName(req, res);
+    }
+    
     getCountries(req, res);
+
 });
 
+countriesRoutes.get('/:id', (req, res) => {
+    getCountryById(req, res);
+});
 
 module.exports = countriesRoutes;
