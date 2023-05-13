@@ -18,6 +18,7 @@ const postActivity = async (req, res) => {
 
         if(countriesID && countriesID.length > 0) {
             const countriesFound = await Country.findAll({ where: { id: countriesID }});
+            console.log(countriesFound);
             await activity.setCountries(countriesFound);
         }
         
