@@ -10,7 +10,8 @@ const getActivities = async (req, res) => {
         return res.status(200).json(allActivities);
     
     } catch (error) {
-        
+
+        if(error.message.includes('No activities found')) return res.status(400).send(error.message);
         return res.status(500).send(error.message);
     }
 }
