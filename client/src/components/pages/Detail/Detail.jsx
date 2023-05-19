@@ -12,7 +12,7 @@ const Detail = () => {
 
             try {
                 
-                const { data } = await axios.get(`http://localhost:3001/countries/${id}`);
+                const { data } = await axios.get(`/countries/${id}`);
                 
                 console.log(data);
 

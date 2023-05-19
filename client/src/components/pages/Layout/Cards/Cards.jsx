@@ -1,3 +1,4 @@
+import styles from './Cards.module.css';
 import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Card from '../Card/Card';
@@ -21,7 +22,6 @@ const mapStateToProps = (state) => {
 
 const Cards = ({ countries, loading, error, getAllCountries }) => {
 
-    console.log(countries);
     
   useEffect(() => {
     getAllCountries();
@@ -36,10 +36,10 @@ const Cards = ({ countries, loading, error, getAllCountries }) => {
   }
 
   return (
-    <div>
+    <div className={styles.conteiner}>
       {countries.map(({ id, name, continent, flag }) => {
         return (
-          <div key={id}>
+          <div key={id} className={styles.cardBox}>
             <Card
               id={id}
               name={name}
