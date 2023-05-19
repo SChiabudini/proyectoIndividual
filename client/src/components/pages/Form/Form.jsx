@@ -12,7 +12,6 @@ const Form = () => {
             
             const response = await axios.post('/activities', data);
             console.log(response.data);
-            setActivityCreated(response.data.created);
             if (response.data.created === true) {
                 setActivityData({
                     name: '',
@@ -21,7 +20,9 @@ const Form = () => {
                     season: '',
                     countries: []
                 });
-            } 
+
+                setActivityCreated('created');
+            } else {setActivityCreated('no created')}
 
         } catch (error) {
             console.log(error);
@@ -41,17 +42,11 @@ const Form = () => {
     });
 
     const [errors, setErrors] = useState({});
-    const [activityCreated, setActivityCreated] = useState(true);
+    const [activityCreated, setActivityCreated] = useState('');
 
     useEffect(() => {
         dispatch(getAllCountries());
     }, [dispatch]);
-
-    useEffect(() => {
-        if (!activityCreated) {
-          setActivityCreated(true);
-        }
-      }, [activityData.name]);
 
     const handleInputChange = (event) => {
         const {name, value} = event.target;
@@ -166,7 +161,8 @@ const Form = () => {
                  ))}
                 <br/>
                 <button type="submit" disabled={isDisabled}>Enviar</button>
-                {!activityCreated && <p>{`Ya existe una actividad con el nombre "${activityData.name}"`}</p>}
+                {activityCreated === 'created' && <p>La actividad ha sido creada.</p>}
+                {activityCreated === 'no created' && <p>{`Ya existe una actividad con el nombre "${activityData.name}"`}</p>}
             </form>
         </div>
     )
