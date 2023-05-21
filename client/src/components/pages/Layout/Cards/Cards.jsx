@@ -7,9 +7,7 @@ import { getAllCountries } from '../../../../redux/actions'
 const mapStateToProps = (state) => {
     
     return {
-      countries: state.allCountries,
-      loading: state.loading,
-      error: state.error
+      countries: state.allCountries
     };
   };
   
@@ -27,16 +25,8 @@ const Cards = ({ countries, loading, error, getAllCountries }) => {
     getAllCountries();
   }, [getAllCountries]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
-    <div className={styles.conteiner}>
+    <div className={styles.container}>
       {countries.map(({ id, name, continent, flag }) => {
         return (
           <div key={id} className={styles.cardBox}>

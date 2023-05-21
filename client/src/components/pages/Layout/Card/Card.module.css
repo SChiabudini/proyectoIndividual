@@ -1,12 +1,16 @@
 .card {
     border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #E5DCD3
+    ;
     padding: 10px;
     text-align: center;
+    width: 100%;
   }
   
   .card img {
     width: 100%;
-    max-height: 200px;
+    max-height: 175px;
     object-fit: cover;
   }
   
@@ -14,8 +18,10 @@
     display: block;
     margin-top: 10px;
     font-weight: bold;
+    font-size: 1rem;
   }
   
   .card h5 {
     margin-top: 5px;
+    margin-bottom: 5px;
   }

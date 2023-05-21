@@ -21,14 +21,14 @@
 .h1{
     letter-spacing: 0.3rem;
     margin: 0;
-    color: #39352F;
+    color: #B3CCE4;
     font-size: 3rem;
 }
 
 .p{
     font-size: 1.5rem;
     font-weight: 400;
-    color: #39352F;
+    color: #B3CCE4;
     line-height: 30px;
     margin: 15px auto;
 }
@@ -36,8 +36,9 @@
 .link {
     display: inline-block;
     font-size: 1.2rem;
-    background-color: #39352F;
-    color: #E5DCD3;
+    background-color: #E5DCD3;
+    color: #C38685;
+    font-weight: 600;
     padding: 1rem 2rem;
     border-radius: 10px;
     text-decoration: none;
@@ -46,7 +47,7 @@
   
   .link:hover {
     transform: translateY(2px);
-    background-color: #554E45;
+    background-color: #B3CCE4;
   }
   
   .link:active {
