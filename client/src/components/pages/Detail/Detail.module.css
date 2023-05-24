@@ -1,0 +1,26 @@
+.container{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 536px;
+}
+
+.container img{
+    width: 600px;
+    border-radius: 15px;
+}
+
+.content{
+    margin-left: 40px;
+    text-align: left;
+}
+
+.content h2{
+    color: #554E45;
+    text-transform: uppercase;
+}
+
+.content p{
+    color: #39352F; 
+}
