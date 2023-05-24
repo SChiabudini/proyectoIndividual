@@ -10,18 +10,27 @@
   
   .card img {
     width: 100%;
-    max-height: 175px;
+    max-height: 140px;
     object-fit: cover;
   }
   
   .card a {
     display: block;
     margin-top: 10px;
-    font-weight: bold;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 12px;
+    color: #39352F;
+    text-decoration: none;
+  }
+
+  .card a:hover {
+    text-decoration: underline;
   }
   
   .card h5 {
     margin-top: 5px;
     margin-bottom: 5px;
+    color: #554E45;
+    font-size: 12px;
+    font-weight: 500;
   }

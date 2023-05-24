@@ -6,8 +6,8 @@ const HomeMenu = () => {
 
     return (
       <div className={style.container}>
-        <SearchBar className={style.searchBar}/>
-        <Filters className={style.filters}/>
+          <div className={style.searchBar}><SearchBar /></div>
+          <div className={style.filters}><Filters /></div>
       </div>
    );
 }

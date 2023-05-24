@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  padding: 20px;
+}
+
+.activities {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 5px;
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+  
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #E5DCD3;
+  height: fit-content;
+  color: #39352F;
+}
+
+.form {
+  margin-left: 10px;
+  width: 50%;
+}
+
+.activity h5 {
+  text-align: right;
+  margin: 5px 0;
+}
+
+.activity p {
+  margin: 2px;
+  font-size: 12px;
+  text-align: right;
+}
+
+.activity img {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 2px;
+}

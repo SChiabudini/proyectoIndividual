@@ -1,0 +1,25 @@
+.container button{
+    color:#39352F;
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+    margin-right: 5px;
+    border-radius: 100%;
+    border: 0.5px solid #39352F;
+    background-color: #E5DCD3;
+    text-align: center;
+}
+
+.container button:hover{
+    cursor: pointer;
+    background-color: #554E45;
+    color: #E5DCD3;
+}
+
+.container button:active {
+    border-style: inset;
+}
+
+.container{
+    margin-top: 10px;
+}

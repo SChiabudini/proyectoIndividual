@@ -1,0 +1,25 @@
+.container label{
+    color: #E5DCD3;
+    font-size: 14px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+.container button{
+    font-size: 12px;
+    background-color: #E5DCD3;
+    border: 1.5px outset  #554E45;
+    color:  #39352F;
+}
+
+.container button:hover{
+    cursor: pointer;
+}
+
+.container button:active {
+    border-style: inset;
+}
+
+.container input{
+    font-size: 12px;
+}

@@ -1,0 +1,11 @@
+.container select{
+    font-size: 12px;
+    padding: 4px;
+    background-color: #E5DCD3;
+    color: #39352F;
+}
+
+.container select option{
+    color: #39352F;
+    background-color: white;
+}

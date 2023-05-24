@@ -1,6 +1,7 @@
 import Form from "../Form/Form";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import style from './Activities.module.css';
 
 const Activities = () => {
   const [activities, setActivities] = useState([]);
@@ -19,24 +20,21 @@ const Activities = () => {
   }, []);
 
   return (
-    <div>
-        <div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                <div style={{ fontWeight: 'bold', width: '25%' }}>Nombre</div>
-                <div style={{ fontWeight: 'bold', width: '25%' }}>Dificultad</div>
-                <div style={{ fontWeight: 'bold', width: '25%' }}>Duración</div>
-                <div style={{ fontWeight: 'bold', width: '25%' }}>Temporada</div>
-            </div>
-            {activities.map(({ name, difficulty, duration, season }) => (
-                <div key={name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}>
-                <div style={{ width: '25%' }}>{name}</div>
-                <div style={{ width: '25%' }}>{difficulty}</div>
-                <div style={{ width: '25%' }}>{duration}</div>
-                <div style={{ width: '25%' }}>{season}</div>
+    <div className={style.container}>
+        <div className={style.activities}>
+            {activities.map(({ name, difficulty, duration, season, image }) => (
+                <div key={name} className={style.activity}>
+                  <img src={image} alt={name}/>
+                  <h5>{name}</h5>
+                  <p>Dificultad: {difficulty}</p>
+                  <p>Duración: {duration}</p>
+                  <p>Temporada: {season}</p>
                 </div>
             ))}
         </div>
-        <Form />
+        <div className={style.form}>
+          <Form />
+        </div>
     </div>
   );
 };

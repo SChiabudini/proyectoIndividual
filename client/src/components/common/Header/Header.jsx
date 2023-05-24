@@ -5,9 +5,11 @@ import logo from './logo.png';
 const Header = () => {
   return (
     <div className={style.container}>
-      <h1 className={style.h1}><img src={logo} alt="Country App"/></h1>
-      <p className={style.p}>Una app de países</p>
-      <Nav className={style.nav} />
+      <div className={style.content}>
+        <h1 className={style.h1}><img src={logo} alt="Country App"/></h1>
+        <p className={style.p}>Una app de países</p>
+        <Nav className={style.nav} />
+      </div>
     </div>
   );
 };

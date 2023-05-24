@@ -2,7 +2,7 @@ const { Activity, Country } = require('../../db');
 
 const postActivity = async (req, res) => {
 
-    const { name, difficulty, duration, season, countriesID } = req.body; 
+    const { name, difficulty, duration, season, countriesID, image } = req.body; 
 
     try {
         if(!name || !name.trim() || !difficulty || !season ){
@@ -12,7 +12,7 @@ const postActivity = async (req, res) => {
         const [activity, created] = await Activity.findOrCreate(
             {
                 where: { name },
-                defaults: { difficulty, duration, season }
+                defaults: { difficulty, duration, season, image }
             }
         );
 

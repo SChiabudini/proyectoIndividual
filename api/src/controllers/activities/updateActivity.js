@@ -2,7 +2,7 @@ const { Activity } = require('../../db');
 
 const updateActivity = async (req, res) => {
 
-    const { id, name, difficulty, duration, season } = req.body;
+    const { id, name, difficulty, duration, season, image } = req.body;
 
     try {
 
@@ -16,7 +16,8 @@ const updateActivity = async (req, res) => {
             name: name || activityFound.name,
             difficulty: difficulty || activityFound.difficulty,
             duration: duration || activityFound.duration,
-            season: season || activityFound.season
+            season: season || activityFound.season,
+            image: image || activityFound.image
         };
 
         const activityUpdated = await Activity.update(activityUpdates, { where: { id } });

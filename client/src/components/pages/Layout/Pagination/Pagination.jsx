@@ -1,3 +1,5 @@
+import style from './Pagination.module.css';
+
 const Pagination = ({ currentPage, countriesPerPage, countries, pagination }) => {
     const pageNumbers = [];
   
@@ -51,10 +53,10 @@ const Pagination = ({ currentPage, countriesPerPage, countries, pagination }) =>
     };
   
     return (
-      <div>
-        <button onClick={handleClickPrevious}>{'<'}</button>
+      <div className={style.container}>
+        <button onClick={handleClickPrevious} disabled={currentPage === 1}>{'<'}</button>
         {renderPageNumbers()}
-        <button onClick={handleClickNext}>{'>'}</button>
+        <button onClick={handleClickNext} disabled={currentPage === pageNumbers.length}>{'>'}</button>
       </div>
     );
   };

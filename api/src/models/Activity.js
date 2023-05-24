@@ -30,6 +30,13 @@ module.exports = (sequelize) => {
         season: {
             type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
             allowNull: false
+        },
+
+        image: {
+            type: DataTypes.STRING(),
+            validate: {
+                isUrl: true
+            }
         }
     }, { timestamps: false })
 }

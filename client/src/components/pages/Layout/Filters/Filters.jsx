@@ -1,4 +1,5 @@
 import axios from 'axios';
+import style from './Filters.module.css';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { filterByContinent, filterByActivity, orderAlphabetical, orderPopulation } from '../../../../redux/actions';
@@ -39,7 +40,7 @@ const Filters = () => {
     }
 
     return(
-        <div>
+        <div className={style.container}>
             <select onChange={handleFilterContinent}>
                 <option value="allCountries">Filtrar por continente</option>
                 <option value="Europe">Europa</option>

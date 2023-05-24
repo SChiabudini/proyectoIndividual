@@ -1,0 +1,66 @@
+.container{
+    text-align: left;
+    border-left: 1px solid #5f83a4;
+    padding-left: 20px;
+}
+
+.container h3{
+    color: #554E45;
+    letter-spacing: 1px;
+}
+
+.container p{
+    color: #5f83a4;
+    margin: 10px 0;
+}
+
+.container form{
+    padding-left: 20px;
+}
+
+.container form p{
+    color: #39352F;
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.container form p label{
+    margin-right: 5px;
+}
+
+.duration{
+    width: 40px;
+}
+
+.errores{
+    color: red;
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.paises{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.creada{
+    color: #554E45;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.container button {
+    background-color: #5f83a4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 15px auto;
+  }
+  
+.container button:hover {
+    background-color: #496c8c;
+}
